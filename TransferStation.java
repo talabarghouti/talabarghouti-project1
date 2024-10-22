@@ -1,17 +1,13 @@
 public class TransferStation extends Station{
+    private ArrayList <Station> TransferStationPrev;
+    private ArrayList <Station> TransferStationNext;
+    public ArrayList <Station> otherStations;
     
     public TransferStation(String lineColor, String name){
         super(lineColor, name);
-    }
-
-    public void makeEnd(){
-        if(this.prev == null){
-            this.prev = this.next;
-        }
-
-        if(this.next == null){
-            this.next = this.prev;
-        } 
+        this.TransferStationPrev = new ArrayList<>();
+        this.TransferStationNext = new ArrayList<>();
+        this.otherStations = new ArrayList<>();
     }
 
     public String toString(){
